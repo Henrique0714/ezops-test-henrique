@@ -20,14 +20,8 @@
  <div id="messages">
 </div>
 </div>
-<script src=”/socket.io/socket.io.js”></script>
+<script src="/socket.io/socket.io.js"></script>
 <script>
-
-const sendButton = document.getElementById('send');
-sendButton.addEventListener('click', function() {
-location.reload();
-});
-
 $(() => {
     $("#send").click(()=>{
        sendMessage({
