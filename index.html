@@ -37,13 +37,13 @@ function addMessages(message){
       <p>  ${message.message} </p>`)
    }
 function getMessages(){
-  $.get('http://localhost:3000/messages', (data) => {
+  $.get('http://localhost:8080/messages', (data) => {
    data.forEach(addMessages);
    })
  }
 function sendMessage(message){
-   $.post('http://localhost:3000/messages', message)
- }
+   $.post('http://localhost:8080/messages', message)
+ } 
 var socket = io();
 socket.on('message', addMessages)
 
@@ -58,8 +58,6 @@ function curtirMensagem() {
   curtidas += 1;
   alert("Você curtiu a mensagem! Total de curtidas: " + curtidas);
 }
-
-
 </script>
 </body>
 </html>
