@@ -37,12 +37,12 @@ function addMessages(message){
       <p>  ${message.message} </p>`)
    }
 function getMessages(){
-  $.get('http://localhost:8080/messages', (data) => {
+  $.get('//http://54.232.159.188:8080/messages', (data) => {
    data.forEach(addMessages);
    })
  }
 function sendMessage(message){
-   $.post('http://localhost:8080/messages', message)
+   $.post('http://54.232.159.188:8080/messages', message)
  } 
 var socket = io();
 socket.on('message', addMessages)
