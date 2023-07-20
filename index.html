@@ -43,7 +43,7 @@ function getMessages(){
    })
  }
 function sendMessage(message){
-   $.post('http://54.232.159.188:8080/messages', message)
+   $.post('//http://54.232.159.188:8080/messages', message)
  } 
 var socket = io();
 socket.on('message', addMessages)
