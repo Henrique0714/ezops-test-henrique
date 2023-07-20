@@ -38,7 +38,7 @@ function addMessages(message){
       <p>  ${message.message} </p>`)
    }
 function getMessages(){
-  $.get('http://54.232.159.188:3000/messages', (data) => {
+  $.get('http://54.232.159.188:8080/messages', (data) => {
    data.forEach(addMessages);
    })
  }
