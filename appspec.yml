@@ -10,6 +10,6 @@ permissions:
     group: ubuntu
 hooks:
   BeforeInstall:
-    - location: scripts/stop_previous_container.sh
+    - location: scripts/UnzipResourceBundle.sh
       timeout: 300
       runas: ubuntu
