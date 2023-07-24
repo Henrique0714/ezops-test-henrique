@@ -3,13 +3,8 @@ os: linux
 files:
   - source: /
     destination: /etc/henrique-teste/github/ezops-test-henrique # Caminho na instância EC2 onde a aplicação será colocada
-permissions:
-  - object: /home/ubuntu/app
-    pattern: "**"
-    owner: ubuntu
-    group: ubuntu
 hooks:
   BeforeInstall:
     - location: scripts/UnzipResourceBundle.sh
       timeout: 300
-      runas: ubuntu
+      runas: root
