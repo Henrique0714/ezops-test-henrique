@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/app # Caminho na instância EC2 onde a aplicação será colocada
+    destination: /etc/henrique-teste/github/ezops-test-henrique # Caminho na instância EC2 onde a aplicação será colocada
 permissions:
   - object: /home/ubuntu/app
     pattern: "**"
