@@ -5,6 +5,6 @@ files:
     destination: /etc/henrique-teste/github/ezops-test-henrique # Caminho na instância EC2 onde a aplicação será colocada
 hooks:
   BeforeInstall:
-    - location: scripts/UnzipResourceBundle.sh
+    - location: before_install.sh
       timeout: 300
       runas: root
