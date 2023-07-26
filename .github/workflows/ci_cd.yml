@@ -29,9 +29,9 @@ jobs:
         username: ubuntu # Substitua pelo seu nome de usuário SSH
         key: ${{ secrets.SSH_PRIVATE_KEY }} # Substitua pelo conteúdo da chave privada SSH
         script: |
-          docker stop henrique-container || true
-          docker rm henrique-container || true
-          docker pull henriquesamu/henrique-teste-ezops:1.0.0
-          docker run -d -p 80:3000 --name henrique-container henriquesamu/henrique-teste-ezops:1.0.0
+          sudo docker stop henrique-container || true
+          sudo docker rm henrique-container || true
+          sudo docker pull henriquesamu/henrique-teste-ezops:1.0.0
+          sudo docker run -d -p 80:3000 --name henrique-container henriquesamu/henrique-teste-ezops:1.0.0
 
 
