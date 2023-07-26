@@ -38,12 +38,12 @@ function addMessages(message){
       <p>  ${message.message} </p>`)
    }
 function getMessages(){
-  $.get('http://15.228.185.251:8080/messages', (data) => {
+  $.get('http://15.228.185.251:80/messages', (data) => {
    data.forEach(addMessages);
    })
  }
 function sendMessage(message){
-   $.post('http://15.228.185.251:8080/messages', message)
+   $.post('http://15.228.185.251:80/messages', message)
  } 
 var socket = io();
 socket.on('message', addMessages)
