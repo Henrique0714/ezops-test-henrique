@@ -24,8 +24,6 @@ jobs:
 
     - name: Deploy
       run: |
-        docker stop henrique-container || true
-        docker rm henrique-container || true
         docker run -d -p 8080:3000 --name henrique-container henriquesamu/henrique-teste-ezops:1.0.0
 
 
