@@ -22,8 +22,16 @@ jobs:
         docker tag henrique-teste-ezops henriquesamu/henrique-teste-ezops:1.0.0
         docker push henriquesamu/henrique-teste-ezops:1.0.0
 
-    - name: Deploy
-      run: |
-        docker run -d -p 8080:3000 --name henrique-container henriquesamu/henrique-teste-ezops:1.0.0
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: 15.228.185.251 # Substitua pelo endereço IP ou nome do servidor
+        username: ubuntu # Substitua pelo seu nome de usuário SSH
+        key: ${{ secrets.SSH_PRIVATE_KEY }} # Substitua pelo conteúdo da chave privada SSH
+        script: |
+          docker stop henrique-container || true
+          docker rm henrique-container || true
+          docker pull henriquesamu/henrique-teste-ezops:1.0.0
+          docker run -d -p 80:3000 --name henrique-container henriquesamu/henrique-teste-ezops:1.0.0
 
 
